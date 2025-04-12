@@ -1,18 +1,31 @@
 export default async function handler(req, res) {
-  const { email } = req.body;
+  if (req.method === "POST") {
+    const { email } = req.body;
 
-  const response = await fetch("https://api.buttondown.email/v1/subscribers", {
-    method: "POST",
-    headers: {
-      Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email }),
-  });
+    if (!email) {
+      return res.status(400).json({ error: "Email is required" });
+    }
 
-  if (response.ok) {
-    res.status(200).json({ message: "Subscribed!" });
+    try {
+      const response = await fetch("https://api.buttondown.email/v1/subscribers", {
+        method: "POST",
+        headers: {
+          Authorization: `Token 935bc5c9-7ced-48ca-997d-5eed5f77ba97`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      return res.status(201).json({ message: "Subscribed!" });
+    } catch (error) {
+      return res.status(500).json({ error: error.message });
+    }
   } else {
-    res.status(500).json({ error: "Subscription failed" });
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
