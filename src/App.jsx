@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <header>
+        <h1>Welcome to GreenSourceGlobal</h1>
+        <p>Your hub for sustainable living, clean energy, and eco-friendly solutions.</p>
+      </header>
+      <main>
+        <h2>Our Mission</h2>
+        <p>We’re on a mission to restore ecosystems, promote renewable energy, and build a thriving green economy for future generations.</p>
+
+        <h2>Subscribe for Updates</h2>
+        <form>
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit">Subscribe</button>
+        </form>
+
+        <h2>Latest Blog Post</h2>
+        <p>Coming soon — stay tuned for tips on sustainable living, recycling projects, and green tech!</p>
+      </main>
+      <footer>
+        <p>&copy; 2025 GreenSourceGlobal</p>
+      </footer>
+    </div>
   )
 }
+
 
 export default App
