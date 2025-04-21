@@ -1,0 +1,16 @@
+import React from 'react';
+
+const Post3 = () => {
+  return (
+    <div>
+      <h1>Recycling Vape Batteries Safely</h1>
+      <img src="/images/vape-recycling.jpg" alt="Vape Battery Recycling" />
+      <p>
+        Learn how to properly dispose of and recycle vape batteries to protect the environment and reduce hazardous waste.
+      </p>
+      <a href="/blog">Back to Blog</a>
+    </div>
+  );
+};
+
+export default Post3;
