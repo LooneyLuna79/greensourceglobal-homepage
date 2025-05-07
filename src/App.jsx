@@ -4,7 +4,7 @@ import Blog from './Blog.jsx';
 import Post1 from './post1.jsx';
 import Post2 from './Post2.jsx';
 import Post3 from './Post3.jsx';
-import HeroSection from './components/HeroSection.jsx';
+// import HeroSection from './components/HeroSection.jsx'; // Commented out for testing
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/" element={<><h2>Welcome to GreenSource Global</h2><HeroSection /></>} />
+          <Route path="/" element={<><h2>Welcome to GreenSource Global</h2>{/* <HeroSection /> */} </>} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/post1" element={<Post1 />} />
           <Route path="/blog/post2" element={<Post2 />} />
