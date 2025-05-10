@@ -1,0 +1,11 @@
+import React from 'react';
+
+const InPage = () => {
+  return (
+    <div>
+      <h1>This is the content of the /in page!</h1>
+    </div>
+  );
+};
+
+export default InPage;
